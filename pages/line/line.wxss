@@ -1,0 +1,19 @@
+.page-head {
+  display: flex;
+  width: 750rpx;
+  height: 100rpx;
+  background-color: #fff;
+}
+
+.page-line {
+  width: 750rpx;
+   height: 600rpx; 
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.line-item {
+  display: flex;
+  width: 750rpx;
+  height: 100rpx; 
+}

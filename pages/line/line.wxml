@@ -1,0 +1,23 @@
+<view class='page'>
+  <view class='page-head'>
+    <view class='line-title'>选择线路:</view>
+    <view class='line-picker'>
+      <picker bindchange="bindPickerChange" value="{{city}}" range="{{lines}}">
+        <view class="picker">{{lines[line]}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class='page-line'>
+    <view class='line-head'>站点信息</view>
+    <view class='line-list' wx:for="{{lineStation}}" wx:key='id'>
+      <view class='line-item'>
+        <!-- <view class='line-icon'>
+        <image src='{{item.img}}'></image>
+      </view> -->
+        <view class='line-name'>{{item.id}}</view>      
+        <view class='line-name'>{{item.name}}</view>
+      </view>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/line/line",
+    "pages/way/way"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#888fff",
+    "navigationBarTitleText": "地铁导航",
+    "navigationBarTextStyle": "white"
+  }
+}
