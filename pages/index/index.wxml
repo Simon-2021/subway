@@ -21,9 +21,23 @@
         <input class='search-input' value='{{stationEnd}}'></input>
       </view>
     </view>
+    <view class='search-button'>
+      <button class='button-search'>搜 索</button>
+    </view>
   </view>
   <view class='page-line'>
-    <navigator url='/pages/line/line'>地铁线路、站点查询</navigator>
+    <view class='line-head'>地铁线路查询</view>
+    <view class='line-item'>
+      <view class='line-title'>线路</view>
+      <view class='line-picker'>
+        <picker bindchange="bindPickerChange" value="{{line}}" range="{{lines}}">
+          <view class="picker">{{lines[line]}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class='line-button'>
+      <button class='button-line'>查 询</button>
+    </view>
   </view>
   <view class='page-bottom'></view>
 </view>
