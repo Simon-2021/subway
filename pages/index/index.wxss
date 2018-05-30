@@ -108,7 +108,7 @@
   display: flex;
   width: 750rpx;
   height: 100rpx;
-   margin-top: 40rpx; 
+  margin-top: 40rpx; 
 }
 .line-title{
   width: 100rpx;
@@ -119,13 +119,14 @@
   vertical-align: middle;
 }
 .line-picker{
-  width: 560rpx;
+  width: 550rpx;
   height: 50rpx;
   margin-top: 25rpx;
   margin-left: 30rpx;
   font-size: 36rpx;    
   text-align: center;
   line-height: 50rpx;
+  border: 1rpx solid #efefef;
 }
 .line-button{
   margin-top: 20rpx;
@@ -141,6 +142,6 @@
 }
 .page-bottom{
   width: 750rpx;
-  height: 135rpx;
+  height: 136rpx;
   background-color: #fff;
 }
