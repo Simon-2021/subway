@@ -1,5 +1,6 @@
 <view class='page'>
   <view class='page-head'>
+    <view class='page-title'>地铁线路查询</view>
     <view class='head-start'>剑川路</view>
     <view class='head-end'>人民广场</view>
   </view>

@@ -26,18 +26,18 @@
     </view>
   </view>
   <view class='page-line'>
-    <view class='line-head'>地铁线路查询</view>
-    <view class='line-item'>
+    <navigator class='line-title' url='/pages/line/line'>地铁线路查询</navigator>
+    <!-- <view class='line-item'>
       <view class='line-title'>线路</view>
       <view class='line-picker'>
         <picker bindchange="bindPickerChange" value="{{line}}" range="{{lines}}">
           <view class="picker">{{lines[line]}}</view>
         </picker>
       </view>
-    </view>
-    <view class='line-button'>
+    </view> -->
+    <!-- <view class='line-button'>
       <button class='button-line'>查 询</button>
-    </view>
+    </view> -->
   </view>
   <view class='page-bottom'></view>
 </view>

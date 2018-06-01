@@ -29,7 +29,7 @@
 }
 .page-search{
   width: 750rpx;
-  height: 550rpx;
+  height: 836rpx;
   margin-top: 10rpx;
   background-color: #fff;  
 }
@@ -51,7 +51,7 @@
   display: flex;
   width: 750rpx;
   height: 80rpx;
-  margin-top: 40rpx;
+  margin-top: 120rpx;
 }
 .search-title{
   width: 120rpx;
@@ -73,7 +73,7 @@
   border: 1rpx solid #efefef;
 }
 .search-button{
-  margin-top: 60rpx;
+  margin-top: 120rpx;
   width: 750rpx;
   height: 100rpx;
   align-items: center;
@@ -86,11 +86,20 @@
 }
 .page-line{
   width: 750rpx;
-  height: 400rpx;
+  height: 100rpx;
   margin-top: 10rpx;
   background-color: #fff;  
 }
-.line-head{
+.line-title{
+  width: 720rpx;
+  height: 100rpx;  
+  margin-left: 30rpx;
+  font-size: 40rpx;
+  line-height: 100rpx;
+  vertical-align: middle;
+  color: #888fff;
+}
+ .line-head{
   width: 700rpx;
   height: 80rpx;
   margin-top: 10rpx;  
@@ -110,14 +119,7 @@
   height: 100rpx;
   margin-top: 40rpx; 
 }
-.line-title{
-  width: 100rpx;
-  height: 100rpx;  
-  margin-left: 30rpx;
-  font-size: 40rpx;
-  line-height: 100rpx;
-  vertical-align: middle;
-}
+
 .line-picker{
   width: 550rpx;
   height: 50rpx;
@@ -133,7 +135,7 @@
   width: 750rpx;
   height: 100rpx;
   align-items: center;
-}
+} 
 .button-line{
   width: 400rpx;
   background-color: #888fff;
@@ -143,5 +145,6 @@
 .page-bottom{
   width: 750rpx;
   height: 136rpx;
+  margin-top: 10rpx;
   background-color: #fff;
 }

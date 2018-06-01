@@ -1,6 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
+
   var stations=[{stationName:'0',
   stationId:0,
   }, {
@@ -31,6 +32,7 @@ App({
     stationName: '9',
     stationId: 9,
   },];
+
   var lines=[{
     lineName:'0',
     lineId:0,
@@ -49,12 +51,12 @@ App({
       lineId: 3,
       stations: [0,6,7,8,9,3],
     },]
+
   this.establish(lines, stations);
   console.log(this.globalData);
   //寻找算法,method=0,路径最短;method=1,换乘最少;method=2,综合最优.
   var find = this.findLine(0,3,1);
   console.log(find);
-
   },
   globalData: {
     stations:[],
