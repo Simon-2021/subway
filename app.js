@@ -8,8 +8,13 @@ App({
         text:'上海地铁线路图'
       },
       success:(res)=>{
+        var starttime = new Date().getTime();
         console.log(res.data);
         this.establish(res.data.lines, res.data.stations);
+        var endtime = new Date().getTime();
+        console.log(endtime - starttime)
+        var line=this.findLine(0,3,1)
+        console.log(line)
       }
     })
 
@@ -64,10 +69,7 @@ App({
   //   },]
 
   // this.establish(lines, stations);
-  console.log(this.globalData.stations);
-  //寻找算法,method=0,路径最短;method=1,换乘最少;method=2,综合最优.
-  var find = this.findLine(0,3,1);
-  console.log(find);
+
   },
   globalData: {
     stations:[],
@@ -159,9 +161,13 @@ App({
     begin.value=0;
     group.push(begin);
     groupValues.push(begin.value);
+    console.log(begin)
+    console.log(group);
    
     do{
       var nowLine=group.shift();
+      console.log(nowLine.lastStation);
+      console.log(this.globalData.stations)
       for (i = 0; i < this.globalData.stations[nowLine.lastStation].nextStations.length;i++)
       {
         var mark=0;
@@ -206,12 +212,12 @@ App({
         }
       }
       //更新数值组
-      var show=new Array();
-      for(var m=0;m<group.length;m++)
-      {
-        show.push(group[m]);
-      }
-      console.log(show)
+      // var show=new Array();
+      // for(var m=0;m<group.length;m++)
+      // {
+      //   show.push(group[m]);
+      // }
+      // console.log(show)
       groupValues.shift();
       var minOfGroup = 1000000;
       for (i = 0; i < groupValues.length;i++)
