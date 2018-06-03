@@ -2,7 +2,7 @@ const app = getApp()
 
 Page({
   data: {
-    cities:['上海','北京'],
+    cities:['上海'],
     city:0,
     stationStart:'剑川路',
     stationEnd:'莘庄',
