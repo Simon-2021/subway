@@ -9,21 +9,23 @@
   </view>
   <view class='page-search'>
     <view class='search-head'>行程搜索</view>
-    <view class='search-item'>
-      <view class='search-title'>起点</view>
-      <view class='search-station'>
-        <input class='search-input' value='{{stationStart}}'></input>
+    <form bindsubmit='search'>
+      <view class='search-item'>
+        <view class='search-title'>起点</view>
+        <view class='search-station'>
+          <input class='search-input' name='start' value='{{stationStart}}'></input>
+        </view>
       </view>
-    </view>
-    <view class='search-item'>
-      <view class='search-title'>终点</view>
-      <view class='search-station'>
-        <input class='search-input' value='{{stationEnd}}'></input>
+      <view class='search-item'>
+        <view class='search-title'>终点</view>
+        <view class='search-station'>
+          <input class='search-input' name='end' value='{{stationEnd}}'></input>
+        </view>
       </view>
-    </view>
-    <view class='search-button'>
-      <button class='button-search'>搜 索</button>
-    </view>
+      <view class='search-button'>
+        <button class='button-search' form-type='submit'>搜 索</button>
+      </view>
+    </form>
   </view>
   <view class='page-line'>
     <navigator class='line-title' url='/pages/line/line'>地铁线路查询</navigator>
