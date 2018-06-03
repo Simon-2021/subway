@@ -124,7 +124,7 @@ App({
     var best;
     var begin=new Object();
     var min = new Array(this.globalData.stations.length);
-    console.log('findLine:'+this.globalData.stations);
+    // console.log('findLine:'+this.globalData.stations);
     for (i=0;i<this.globalData.stations.length;i++)
     {
     var use = new Array(this.globalData.stations.length);
@@ -161,13 +161,13 @@ App({
     begin.value=0;
     group.push(begin);
     groupValues.push(begin.value);
-    console.log(begin)
-    console.log(group);
+    // console.log(begin)
+    // console.log(group);
    
     do{
       var nowLine=group.shift();
-      console.log(nowLine.lastStation);
-      console.log(this.globalData.stations)
+      // console.log(nowLine.lastStation);
+      // console.log(this.globalData.stations)
       for (i = 0; i < this.globalData.stations[nowLine.lastStation].nextStations.length;i++)
       {
         var mark=0;
