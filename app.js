@@ -9,67 +9,14 @@ App({
       },
       success:(res)=>{
         var starttime = new Date().getTime();
-        console.log(res.data);
+        // console.log(res.data);
         this.establish(res.data.lines, res.data.stations);
         var endtime = new Date().getTime();
-        console.log(endtime - starttime)
+        // console.log(endtime - starttime)
         var line=this.findLine(0,3,1)
-        console.log(line)
+        // console.log(line)
       }
     })
-
-  // var stations=[{stationName:'0',
-  // stationId:0,
-  // }, {
-  //   stationName:'1',
-  //   stationId:1,
-  //   }, {
-  //     stationName:'2',
-  //     stationId:2,
-  // }, {
-  //   stationName:'3',
-  //   stationId:3,
-  //   }, {
-  //     stationName:'4',
-  //     stationId:4,
-  // }, {
-  //   stationName:'5',
-  //   stationId:5,
-  //   }, {
-  //     stationName: '6',
-  //     stationId: 6,
-  // }, {
-  //   stationName: '7',
-  //   stationId: 7,
-  //   }, {
-  //     stationName: '8',
-  //     stationId: 8,
-  // }, {
-  //   stationName: '9',
-  //   stationId: 9,
-  // },];
-
-  // var lines=[{
-  //   lineName:'0',
-  //   lineId:0,
-  //   stations:[0,1,2,5],
-  // }, {
-  //   lineName:'1',
-  //   lineId:1,
-  //   stations:[1,3,4],
-  //   }, {
-  //     lineName:'2',
-  //     lineId:2,
-  //     stations:[1, 2, 5],
-  //   },
-  //   {
-  //     lineName: '3',
-  //     lineId: 3,
-  //     stations: [0,6,7,8,9,3],
-  //   },]
-
-  // this.establish(lines, stations);
-
   },
   globalData: {
     stations:[],
@@ -124,7 +71,7 @@ App({
     var best;
     var begin=new Object();
     var min = new Array(this.globalData.stations.length);
-    console.log('findLine:'+this.globalData.stations);
+    // console.log('findLine:'+this.globalData.stations);
     for (i=0;i<this.globalData.stations.length;i++)
     {
     var use = new Array(this.globalData.stations.length);
@@ -161,13 +108,13 @@ App({
     begin.value=0;
     group.push(begin);
     groupValues.push(begin.value);
-    console.log(begin)
-    console.log(group);
+    // console.log(begin)
+    // console.log(group);
    
     do{
       var nowLine=group.shift();
-      console.log(nowLine.lastStation);
-      console.log(this.globalData.stations)
+      // console.log(nowLine.lastStation);
+      // console.log(this.globalData.stations)
       for (i = 0; i < this.globalData.stations[nowLine.lastStation].nextStations.length;i++)
       {
         var mark=0;
@@ -230,9 +177,8 @@ App({
     }
     while (minOfGroup < minOfNow);
     return(best);
-  
-
   },
+
   getLineInformation:function(lineID){},
   getStationInformation: function (stationID) { },
 
