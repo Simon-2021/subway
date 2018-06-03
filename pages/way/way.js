@@ -1,18 +1,40 @@
-// pages/way/way.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    ways:[],
+    stations:[],
+    lineName:app.globalData.lineName,
+    stationName:app.globalData.stationName,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+    let ways = options.ways.split(',');
+    let stations = options.stations.split(',');
+    this.setData({
+      ways: ways,
+      stations: stations
+    })
+    let solution = [];
+    let wayLines =-1;
+    for (let i = 0; i < stations.length;i++){
+      if (ways[i]!=wayLines){
+        let wayLine = {
+          start:stations[i],
+          end:''
+        }
+      }
+    }
+    // let stationName=[];
+    // for(let i=0;i<options.stations.length;i++){
+    //   stationName[i] = app.globalData.stationName[this.data.stations[i]];
+    //   // console.log(JSON.parse(options.stations)[i]);
+    //   // console.log(stationName[i]);
+    // }
+    // console.log(stationName);
+    // console.log(this.data.stationName[this.data.stations[5]]);
   },
 
   /**

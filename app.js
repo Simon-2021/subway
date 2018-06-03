@@ -21,6 +21,8 @@ App({
   globalData: {
     stations:[],
     lines:[],
+    lineName:[],
+    stationName:[]
   },
 
   establish: function (lines,stations) {
@@ -57,6 +59,14 @@ App({
       }
       this.globalData.lines.push(newLine);
     }
+    // console.log(this.globalData.lines)
+    for (let i = 0; i < this.globalData.lines.length; i++) {
+      this.globalData.lineName.push(this.globalData.lines[i].lineName);
+    }
+    for (let i = 0; i < this.globalData.stations.length; i++) {
+      this.globalData.stationName.push(this.globalData.stations[i].stationName);
+    }
+    // console.log(this.globalData.lineName);
   },
 
 // //寻找算法,method=0,路径最短;method=1,换乘最少;method=2,综合最优.
@@ -180,6 +190,6 @@ App({
 //   },
 
   getLineInformation:function(lineID){},
-  getStationInformation: function (stationID) { },
+  getStationInformation: function (stationID) {},
 
 })

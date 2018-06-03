@@ -13,6 +13,9 @@ Page({
     // for(let i=0;i<app.globalData.stations.length;i++){
     //   console.log('id:' + app.globalData.stations[i].stationId+'; Num:'+i);
     // }
+    // for(let i=0;i<app.globalData.lines.length;i++){
+    //   console.log('id:' + app.globalData.lines[i].lineName+'; Num:'+i);
+    // }
   },
   search:function(e){
     // console.log(e.detail.value.start)
@@ -46,9 +49,9 @@ Page({
       })
     } else {
       let solution = this.findLine(startId, endId,2);
-      console.log(solution);
+      // console.log(solution);
       wx.navigateTo({
-        url: `../way/way?ways=${solution.ways}&&stations=${solution.lines}`,
+        url: `../way/way?ways=${solution.ways}&&stations=${solution.stations}`,
       })
     }
   },
