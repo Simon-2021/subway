@@ -10,9 +10,9 @@ Page({
     line: 4,
   },
   onLoad: function () {
-    for(let i=0;i<app.globalData.stations.length;i++){
-      // console.log('id:' + app.globalData.stations[i].stationId+'; Num:'+i);
-    }
+    // for(let i=0;i<app.globalData.stations.length;i++){
+    //   console.log('id:' + app.globalData.stations[i].stationId+'; Num:'+i);
+    // }
   },
   search:function(e){
     // console.log(e.detail.value.start)
@@ -45,8 +45,8 @@ Page({
         icon: 'none'
       })
     } else {
-      // console.log(startId+'+'+endId);
-      let solution = this.findLine(startId, endId,1);
+      let solution = this.findLine(startId, endId,2);
+      console.log(solution);
       wx.navigateTo({
         url: `../way/way?ways=${solution.ways}&&stations=${solution.lines}`,
       })
