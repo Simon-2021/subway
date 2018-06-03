@@ -41,5 +41,5 @@
       <button class='button-line'>查 询</button>
     </view> -->
   </view>
-  <view class='page-bottom'></view>
+  <!-- <view class='page-bottom'></view> -->
 </view>

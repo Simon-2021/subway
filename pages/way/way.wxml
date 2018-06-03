@@ -1,32 +1,38 @@
 <view class='page'>
   <view class='page-head'>
-    <view class='page-title'>地铁线路查询</view>
-    <view class='head-start'>{{stationName[stations[0]]}}</view>
-    <view class='head-end'>人民广场</view>
+    <view class='page-title'>地铁线路搜索</view>
+    <view class='page-travel'>
+      <view class='travel-station'>{{stationName[start]}}</view>
+      <view class='travel-station'>至</view>
+      <view class='travel-station'>{{stationName[end]}}</view>
+    </view>
   </view>
   <view class='page-content'>
     <view class='page-way'>
+      <!-- <view class='way-title'>线路1</view>  -->
+      <!-- <view class='way-explain'>最优路线</view> -->
+      <view class='way-line'>
+        <view class='line-list' wx:for='{{lineArray}}' wx:key='id'>
+          <view class='line-title'>
+            <view class='line-name'>{{lineName[item.lineId]}}</view>
+            <text class='line-dir' decode='true'>至&ensp;{{stationName[item.lineEnd]}}</text>
+          </view>
+          <view class='station-list' wx:for='{{item.stationArray}}'>
+            <view class='line-station'>{{stationName[item]}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='way-title'>线路2</view>
+       <view class='way-explain'>最少换乘</view>
+      <view class='way-line'>
+        <view class='line-list' wx:for='{{lines}}' wx:key='id'>
+          <view class='line-title'>1号线</view>
+          <view class='station-list' wx:for='{{stations[line]}}' wx:key='id'>
+            <view class='line-station'>莘庄{{item.name}}</view>
+          </view>
+        </view>
+      </view>
       <view class='way-title'>线路1</view>
-      <view class='way-explain'>最优路线</view>
-      <view class='way-line'>
-        <view class='line-list' wx:for='{{lines}}' wx:key='id'>
-          <view class='line-title'>1号线</view>
-          <view class='station-list' wx:for='{{stations[line]}}' wx:key='id'>
-            <view class='line-station'>莘庄{{item.name}}</view>
-          </view>
-        </view>
-      </view>
-            <view class='way-title'>线路2</view>
-      <view class='way-explain'>最少换乘</view>
-      <view class='way-line'>
-        <view class='line-list' wx:for='{{lines}}' wx:key='id'>
-          <view class='line-title'>1号线</view>
-          <view class='station-list' wx:for='{{stations[line]}}' wx:key='id'>
-            <view class='line-station'>莘庄{{item.name}}</view>
-          </view>
-        </view>
-      </view>
-            <view class='way-title'>线路1</view>
       <view class='way-explain'>最少站点</view>
       <view class='way-line'>
         <view class='line-list' wx:for='{{lines}}' wx:key='id'>
@@ -35,7 +41,7 @@
             <view class='line-station'>莘庄{{item.name}}</view>
           </view>
         </view>
-      </view>
+      </view>  -->
     </view>
   </view>
 </view>

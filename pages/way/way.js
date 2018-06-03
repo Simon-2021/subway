@@ -7,26 +7,53 @@ Page({
   data: {
     ways:[],
     stations:[],
+    start:0,
+    end:0,
+    lineArray:[],
     lineName:app.globalData.lineName,
     stationName:app.globalData.stationName,
   },
   onLoad: function (options) {
     let ways = options.ways.split(',');
     let stations = options.stations.split(',');
-    this.setData({
-      ways: ways,
-      stations: stations
-    })
-    let solution = [];
-    let wayLines =-1;
-    for (let i = 0; i < stations.length;i++){
-      if (ways[i]!=wayLines){
-        let wayLine = {
-          start:stations[i],
-          end:''
+    let start = stations[0];
+    let end = stations[stations.length - 1];
+    // let lineArray = [ways[0]];
+    let lineEnd = [];
+    let lineArray = [{
+      id:0,
+      lineId: ways[0],
+      lineEnd:0,
+      stationArray:[]
+    }];
+    let n=0;
+    let lineFlag = ways[0];
+    for (let i = 0; i < ways.length;i++){
+      lineArray[n].stationArray.push(stations[i]);      
+      if (ways[i]!=lineFlag){
+        lineArray[n].lineEnd=stations[i];
+        n=n+1;
+        let lineItem = {
+          id: n,
+          lineId: ways[i],
+          lineEnd: 0,
+          stationArray: []
         }
+        lineArray.push(lineItem); 
+        lineFlag = ways[i];
       }
     }
+    lineArray[n].stationArray.push(end);
+    lineArray[n].lineEnd = end;
+    console.log(lineArray);
+    console.log(options);
+    this.setData({
+      ways: ways,
+      stations: stations,
+      start: start,
+      end: end,
+      lineArray:lineArray
+    })
     // let stationName=[];
     // for(let i=0;i<options.stations.length;i++){
     //   stationName[i] = app.globalData.stationName[this.data.stations[i]];

@@ -29,7 +29,7 @@
 }
 .page-search{
   width: 750rpx;
-  height: 836rpx;
+  height: 986rpx;
   margin-top: 10rpx;
   background-color: #fff;  
 }
@@ -73,7 +73,7 @@
   border: 1rpx solid #efefef;
 }
 .search-button{
-  margin-top: 120rpx;
+  margin-top: 220rpx;
   width: 750rpx;
   height: 100rpx;
   align-items: center;
@@ -142,9 +142,9 @@
   color: white;
   text-align: center;
 }
-.page-bottom{
+/* .page-bottom{
   width: 750rpx;
   height: 136rpx;
   margin-top: 10rpx;
   background-color: #fff;
-}
+} */
