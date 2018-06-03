@@ -1,59 +1,70 @@
 //app.js
 App({
   onLaunch: function () {
+    wx.request({
+      url: 'https://www.bein.xin/subway',
+      method:'post',
+      data:{
+        text:'上海地铁线路图'
+      },
+      success:(res)=>{
+        console.log(res.data);
+        this.establish(res.data.lines, res.data.stations);
+      }
+    })
 
-  var stations=[{stationName:'0',
-  stationId:0,
-  }, {
-    stationName:'1',
-    stationId:1,
-    }, {
-      stationName:'2',
-      stationId:2,
-  }, {
-    stationName:'3',
-    stationId:3,
-    }, {
-      stationName:'4',
-      stationId:4,
-  }, {
-    stationName:'5',
-    stationId:5,
-    }, {
-      stationName: '6',
-      stationId: 6,
-  }, {
-    stationName: '7',
-    stationId: 7,
-    }, {
-      stationName: '8',
-      stationId: 8,
-  }, {
-    stationName: '9',
-    stationId: 9,
-  },];
+  // var stations=[{stationName:'0',
+  // stationId:0,
+  // }, {
+  //   stationName:'1',
+  //   stationId:1,
+  //   }, {
+  //     stationName:'2',
+  //     stationId:2,
+  // }, {
+  //   stationName:'3',
+  //   stationId:3,
+  //   }, {
+  //     stationName:'4',
+  //     stationId:4,
+  // }, {
+  //   stationName:'5',
+  //   stationId:5,
+  //   }, {
+  //     stationName: '6',
+  //     stationId: 6,
+  // }, {
+  //   stationName: '7',
+  //   stationId: 7,
+  //   }, {
+  //     stationName: '8',
+  //     stationId: 8,
+  // }, {
+  //   stationName: '9',
+  //   stationId: 9,
+  // },];
 
-  var lines=[{
-    lineName:'0',
-    lineId:0,
-    stations:[0,1,2,5],
-  }, {
-    lineName:'1',
-    lineId:1,
-    stations:[1,3,4],
-    }, {
-      lineName:'2',
-      lineId:2,
-      stations:[1, 2, 5],
-    },
-    {
-      lineName: '3',
-      lineId: 3,
-      stations: [0,6,7,8,9,3],
-    },]
+  // var lines=[{
+  //   lineName:'0',
+  //   lineId:0,
+  //   stations:[0,1,2,5],
+  // }, {
+  //   lineName:'1',
+  //   lineId:1,
+  //   stations:[1,3,4],
+  //   }, {
+  //     lineName:'2',
+  //     lineId:2,
+  //     stations:[1, 2, 5],
+  //   },
+  //   {
+  //     lineName: '3',
+  //     lineId: 3,
+  //     stations: [0,6,7,8,9,3],
+  //   },]
 
-  this.establish(lines, stations);
-  console.log(this.globalData);
+  // this.establish(lines, stations);
+  console.log(this.globalData.stations);
   //寻找算法,method=0,路径最短;method=1,换乘最少;method=2,综合最优.
   var find = this.findLine(0,3,1);
   console.log(find);
@@ -74,13 +85,13 @@ App({
       newStation.nextStations = new Array();
       newStation.nextWays = new Array();
       newStation.lines = new Array();
-      this.globalData.stations.push(newStation);0
+      this.globalData.stations.push(newStation);
     }
     //根据线路图,填写站点信息库
     for (i = 0; i < lines.length; i++) {
       var newLine = new Object();
       newLine.lineId = lines[i].lineId;
-      newLine.name = lines[i].lineName;
+      newLine.lineName = lines[i].lineName;
       newLine.stations = new Array();
       for (j = 0; j < lines[i].stations.length; j++) {
         var nowStation = lines[i].stations[j];
@@ -111,6 +122,7 @@ App({
     var best;
     var begin=new Object();
     var min = new Array(this.globalData.stations.length);
+    console.log('findLine:'+this.globalData.stations);
     for (i=0;i<this.globalData.stations.length;i++)
     {
     var use = new Array(this.globalData.stations.length);
