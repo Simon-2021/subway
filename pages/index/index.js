@@ -11,7 +11,7 @@ Page({
   },
   onLoad: function () {
     for(let i=0;i<app.globalData.stations.length;i++){
-      console.log('id:' + app.globalData.stations[i].stationId+'; Num:'+i);
+      // console.log('id:' + app.globalData.stations[i].stationId+'; Num:'+i);
     }
   },
   search:function(e){
@@ -46,7 +46,10 @@ Page({
       })
     } else {
       // console.log(startId+'+'+endId);
-      console.log(this.findLine(startId, endId,1));
+      let solution = this.findLine(startId, endId,1);
+      wx.navigateTo({
+        url: `../way/way?ways=${solution.ways}&&stations=${solution.lines}`,
+      })
     }
   },
   //寻找算法,method=0,路径最短;method=1,换乘最少;method=2,综合最优.
